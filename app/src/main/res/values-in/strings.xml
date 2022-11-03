@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">PROA Submission AK</string>
+    <string name="action_settings">Pengaturan</string>
+    <string name="action_logout">Keluar</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="stories_fragment_label">Daftar Cerita</string>
+    <string name="story_details_fragment_label">Cerita %1$s</string>
+    <string name="create_story_fragment_label">Buat Cerita Baru</string>
+    <string name="first_fragment_label">Fragmen Pertama</string>
+    <string name="second_fragment_label">Fragmen Kedua</string>
+    <string name="next">Selanjutnya</string>
+    <string name="previous">Sebelumnya</string>
+    <string name="fab_content_description">Deskripsi konten Floating Action Button</string>
+
+    <!-- Strings related to login -->
+    <string name="login_fragment_label">Masuk</string>
+    <string name="register_fragment_label">Daftar</string>
+    <string name="prompt_full_name">Nama Lengkap</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Kata sandi</string>
+    <string name="action_login">Masuk</string>
+    <string name="action_register">Daftar</string>
+    <string name="action_sign_in">Masuk or daftar</string>
+    <string name="action_sign_in_short">Masuk</string>
+    <string name="welcome">"Selamat datang!"</string>
+    <string name="invalid_username">Nama Pengguna tidak valid</string>
+    <string name="invalid_password">Kata sandi harus minimal 6 karakter</string>
+    <string name="login_failed">"Login gagal"</string>
+    <string name="label_or">Atau</string>
+    <string name="fab_create_story_content_description">Buat Cerita Baru Floating Action Button</string>
+
+    <string name="status_logout_success">Berhasil Keluar</string>
+    <string name="action_add_file_from_camera">Dari Camera</string>
+    <string name="section_add_photo">Tambah Foto</string>
+    <string name="action_add_file_from_gallery">Dari Galeri</string>
+    <string name="action_add_story">Tambah Cerita</string>
+    <string name="status_story_submitted_success">Sukses tambahkan cerita</string>
+    <string name="label_create_story_description">Deskripsi (tambahan)</string>
+    <string name="action_optional_add_photo_description">Tambah deskripsi foto</string>
+    <string name="create_story_image_content_description">Tampilan Pratinjau Foto</string>
+    <string name="action_choose_photo_from_gallery">Pilih Foto</string>
+    <string name="detail_photo_content_description">Cerita Foto Pengguna</string>
+</resources>

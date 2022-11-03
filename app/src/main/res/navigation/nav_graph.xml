@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/LoginFragment">
+
+    <fragment
+        android:id="@+id/LoginFragment"
+        android:name="dev.achmadk.proasubmission1.LoginFragment"
+        android:label="@string/login_fragment_label"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_LoginFragment_to_RegisterFragment"
+            app:destination="@id/RegisterFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:launchSingleTop="false"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+
+        <action
+            android:id="@+id/action_LoginFragment_to_StoriesFragment"
+            app:destination="@id/StoriesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/RegisterFragment"
+        android:name="dev.achmadk.proasubmission1.RegisterFragment"
+        android:label="@string/register_fragment_label"
+        tools:layout="@layout/fragment_register">
+        <action
+            android:id="@+id/action_RegisterFragment_to_LoginFragment"
+            app:destination="@id/LoginFragment" />
+
+        <action
+            android:id="@+id/action_RegisterFragment_to_StoriesFragment"
+            app:destination="@id/StoriesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/StoriesFragment"
+        android:name="dev.achmadk.proasubmission1.StoriesFragment"
+        android:label="@string/stories_fragment_label"
+        tools:layout="@layout/fragment_stories">
+
+        <action
+            android:id="@+id/action_StoriesFragment_to_StoryDetailsFragment"
+            app:destination="@id/StoryDetailsFragment" />
+        <action
+            android:id="@+id/action_StoriesFragment_to_LoginFragment"
+            app:destination="@id/LoginFragment" />
+        <action
+            android:id="@+id/action_StoriesFragment_to_CreateStoryFragment"
+            app:destination="@id/CreateStoryFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/StoryDetailsFragment"
+        android:name="dev.achmadk.proasubmission1.StoryDetailsFragment"
+        android:label="@string/story_details_fragment_label"
+        tools:layout="@layout/fragment_story_details">
+
+        <action
+            android:id="@+id/action_StoryDetailsFragment_to_StoriesFragment"
+            app:destination="@id/StoriesFragment" />
+        <argument
+            android:name="name"
+            app:argType="string"
+            android:defaultValue='""' />
+        <argument
+            android:name="selectedStory"
+            app:argType="dev.achmadk.proasubmission1.models.StoryResponseBody"
+            app:nullable="true"
+            android:defaultValue="@null" />
+    </fragment>
+    <fragment
+        android:id="@+id/CreateStoryFragment"
+        android:name="dev.achmadk.proasubmission1.CreateStoryFragment"
+        android:label="@string/create_story_fragment_label"
+        tools:layout="@layout/fragment_create_story">
+
+        <action
+            android:id="@+id/action_CreateStoryFragment_to_StoriesFragment"
+            app:destination="@id/StoriesFragment" />
+    </fragment>
+</navigation>

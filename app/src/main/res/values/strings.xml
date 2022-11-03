@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">PROA Submission AK</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_logout">Logout</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="stories_fragment_label">Stories</string>
+    <string name="create_story_fragment_label">Create Story</string>
+    <string name="story_details_fragment_label">{name} Story</string>
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+    <string name="fab_content_description">Floating Action Button Content Description</string>
+
+    <!-- Strings related to login -->
+    <string name="login_fragment_label">Login</string>
+    <string name="register_fragment_label">Register</string>
+    <string name="prompt_full_name">Full Name</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_login">Login</string>
+    <string name="action_register">Register</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome!"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >6 characters</string>
+    <string name="login_failed">"Login failed"</string>
+    <string name="label_or">Or</string>
+    <string name="fab_create_story_content_description">Create Story Floating Action Button</string>
+
+    <string name="status_logout_success">Successfully Logout</string>
+    <string name="action_add_file_from_camera">From Camera</string>
+    <string name="section_add_photo">Add Photo</string>
+    <string name="action_add_file_from_gallery">From Gallery</string>
+    <string name="action_add_story">Add Story</string>
+    <string name="status_story_submitted_success">Successfully add story</string>
+    <string name="label_create_story_description">Description (optional)</string>
+    <string name="action_optional_add_photo_description">Add Photo Description</string>
+    <string name="create_story_image_content_description">Preview of Create Story Photo</string>
+    <string name="action_choose_photo_from_gallery">Choose a Photo</string>
+    <string name="detail_photo_content_description">user photo story</string>
+</resources>
