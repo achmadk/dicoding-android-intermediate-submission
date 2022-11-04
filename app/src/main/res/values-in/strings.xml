@@ -5,7 +5,7 @@
     <string name="action_logout">Keluar</string>
     <!-- Strings used for fragments for navigation -->
     <string name="stories_fragment_label">Daftar Cerita</string>
-    <string name="story_details_fragment_label">Cerita %1$s</string>
+    <string name="story_details_fragment_label">Cerita {name}</string>
     <string name="create_story_fragment_label">Buat Cerita Baru</string>
     <string name="first_fragment_label">Fragmen Pertama</string>
     <string name="second_fragment_label">Fragmen Kedua</string>
