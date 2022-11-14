@@ -40,7 +40,7 @@ object ApiModule {
         return Retrofit.Builder()
             .baseUrl(ENDPOINT)
             .addConverterFactory(GsonConverterFactory.create(gson))
-//            .client(client)
+            .client(client)
             .build()
     }
 
