@@ -17,6 +17,7 @@ import dagger.hilt.android.AndroidEntryPoint
 import dev.achmadk.proasubmission1.databinding.FragmentStoriesBinding
 import dev.achmadk.proasubmission1.ui.stories.StoryAdapter
 import dev.achmadk.proasubmission1.ui.stories.viewmodels.StoriesViewModel
+import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 
 /**
@@ -108,8 +109,8 @@ class StoriesFragment : Fragment() {
 
     private fun observeViewModels() {
         viewLifecycleOwner.lifecycleScope.launch {
-            viewModel.getStoriesPaging().observe(viewLifecycleOwner) {
-                storyAdapter.submitData(lifecycle, it)
+            viewModel.storiesPaging.collectLatest {
+                storyAdapter.submitData(it)
             }
         }
     }

@@ -36,12 +36,4 @@ object DataStoreModule {
             produceFile = { appContext.preferencesDataStoreFile(UserPreferences.NAME) }
         )
     }
-
-    @Provides
-    @Singleton
-    fun provideDataStoreRepository(@ApplicationContext appContext: Context) = DataStoreRepository(appContext)
-
-    @Provides
-    @Singleton
-    fun provideUserPreferenceRepository(dataStoreRepository: DataStoreRepository) = UserPreferenceRepository(dataStoreRepository)
 }

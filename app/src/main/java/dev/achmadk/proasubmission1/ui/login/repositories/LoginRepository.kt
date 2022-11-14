@@ -10,10 +10,10 @@ import javax.inject.Inject
 import javax.inject.Singleton
 
 @Singleton
-class LoginRepository  @Inject constructor(
+class LoginRepository @Inject constructor(
     private val dicodingStory: DicodingStory
-) {
-    suspend fun submitLogin(body: LoginRequestBody): Response<LoginResponseBody> = withContext(
+): ILoginRepository {
+    override suspend fun submitLogin(body: LoginRequestBody): Response<LoginResponseBody> = withContext(
         Dispatchers.IO
     ) {
         val loginResult = dicodingStory.login(body)

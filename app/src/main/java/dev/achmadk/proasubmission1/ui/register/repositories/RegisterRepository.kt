@@ -12,8 +12,8 @@ import javax.inject.Singleton
 @Singleton
 class RegisterRepository @Inject constructor(
     private val dicodingStory: DicodingStory
-) {
-    suspend fun submitRegister(body: RegisterRequestBody): Response<RegisterResponseBody> = withContext(
+): IRegisterRepository {
+    override suspend fun submitRegister(body: RegisterRequestBody): Response<RegisterResponseBody> = withContext(
         Dispatchers.IO
     ) {
         val registerResult = dicodingStory.register(body)

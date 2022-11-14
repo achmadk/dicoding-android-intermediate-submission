@@ -1,7 +1,6 @@
 package dev.achmadk.proasubmission1.ui.register.viewmodels
 
 import android.content.Context
-import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -11,15 +10,16 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dev.achmadk.proasubmission1.models.RegisterRequestBody
 import dev.achmadk.proasubmission1.models.RegisterResponseBody
-import dev.achmadk.proasubmission1.ui.register.repositories.RegisterRepository
+import dev.achmadk.proasubmission1.ui.register.repositories.IRegisterRepository
 import dev.achmadk.proasubmission1.utils.Resource
 import dev.achmadk.proasubmission1.utils.hasInternetConnection
 import kotlinx.coroutines.launch
+import timber.log.Timber
 import javax.inject.Inject
 
 @HiltViewModel
 class RegisterViewModel @Inject constructor(
-    private val registerRepository: RegisterRepository,
+    private val registerRepository: IRegisterRepository,
     @ApplicationContext private val context: Context
 ): ViewModel() {
     @Suppress("MemberVisibilityCanBePrivate")
@@ -41,10 +41,10 @@ class RegisterViewModel @Inject constructor(
                         registerResponse.postValue(Resource.Error(errorResponse?.message ?: "Unknown Error"))
                     }
                 } else {
-                    Log.e("submit_register_failed", "No internet connection")
+                    Timber.tag("submit_register_failed").e("No internet connection")
                 }
             } catch (ex: Exception) {
-                Log.e("submit_register_failed", "Failed to submit register form")
+                Timber.tag("submit_register_failed").e("Failed to submit register form")
             }
         }
     }

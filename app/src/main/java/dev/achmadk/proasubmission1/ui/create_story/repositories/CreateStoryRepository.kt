@@ -1,5 +1,6 @@
 package dev.achmadk.proasubmission1.ui.create_story.repositories
 
+import dev.achmadk.proasubmission1.data.repositories.IUserPreferenceRepository
 import dev.achmadk.proasubmission1.models.StoryRequestBodyCreate
 import dev.achmadk.proasubmission1.services.DicodingStory
 import dev.achmadk.proasubmission1.utils.reduceImageFile
@@ -16,19 +17,17 @@ import javax.inject.Singleton
 
 @Singleton
 class CreateStoryRepository @Inject constructor (
-    private val dicodingStory: DicodingStory
-) {
+    private val dicodingStory: DicodingStory,
+    private val userPreferenceRepository: IUserPreferenceRepository
+): ICreateStoryRepository {
     private fun generateRequestBody(initialRequestBody: StoryRequestBodyCreate): MutableMap<String, RequestBody> {
         val requestBody: MutableMap<String, RequestBody> = mutableMapOf()
         requestBody["description"] = initialRequestBody.description.toRequestBody("text/plain".toMediaType())
-//        if (initialRequestBody.lat?.isNaN() == false) {
-//            requestBody["lat"] = initialRequestBody.lat ?: 0f
-//        }
-//        requestBody["lon"] = initialRequestBody.lon ?: 0f
         return requestBody
     }
 
-    suspend fun submitStory(initialRequestBody: StoryRequestBodyCreate, initialImageFile: File, token: String) = withContext(Dispatchers.IO) {
+    override suspend fun submitStory(initialRequestBody: StoryRequestBodyCreate, initialImageFile: File) = withContext(Dispatchers.IO) {
+        val token = userPreferenceRepository.getToken()
         val requestBody: MutableMap<String, RequestBody> = generateRequestBody(initialRequestBody)
         val compressedImageFile = reduceImageFile(initialImageFile)
         val imageFile = MultipartBody.Part.createFormData("photo", compressedImageFile.name, compressedImageFile.asRequestBody())

@@ -6,11 +6,10 @@ import androidx.lifecycle.viewModelScope
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import dagger.hilt.android.lifecycle.HiltViewModel
-import dev.achmadk.proasubmission1.data.repositories.UserPreferenceRepository
 import dev.achmadk.proasubmission1.models.BaseResponseBody
 import dev.achmadk.proasubmission1.models.BaseResponseBodyAbstract
 import dev.achmadk.proasubmission1.models.StoryRequestBodyCreate
-import dev.achmadk.proasubmission1.ui.create_story.repositories.CreateStoryRepository
+import dev.achmadk.proasubmission1.ui.create_story.repositories.ICreateStoryRepository
 import dev.achmadk.proasubmission1.utils.Resource
 import kotlinx.coroutines.launch
 import java.io.File
@@ -20,8 +19,7 @@ import javax.inject.Inject
 @Suppress("MemberVisibilityCanBePrivate")
 @HiltViewModel
 class CreateStoryViewModel @Inject constructor(
-    private val createStoryRepository: CreateStoryRepository,
-    private val userPreferenceRepository: UserPreferenceRepository
+    private val createStoryRepository: ICreateStoryRepository,
 ) : ViewModel() {
     val isSuccessSubmitStory: MutableLiveData<Boolean?> = MutableLiveData(null)
 
@@ -31,8 +29,7 @@ class CreateStoryViewModel @Inject constructor(
         submitStoryResponse.postValue(Resource.Loading())
         viewModelScope.launch {
             try {
-                val token = userPreferenceRepository.getToken()
-                val response = createStoryRepository.submitStory(payload, file, token)
+                val response = createStoryRepository.submitStory(payload, file)
                 if (response.isSuccessful) {
                     isSuccessSubmitStory.postValue(true)
                     val body = response.body()!!
