@@ -1,0 +1,22 @@
+Pengujian unit testing
+
+    Pengujian kelas-kelas ViewModel
+
+        RegisterViewModel
+          berhasil daftar akun
+
+        LoginViewModel
+          berhasil login dengan data akun tertentu
+          jika user belum melakukan login, nilai isLoggedIn masih false
+
+        StoriesViewModel
+          berhasil memuat data story
+            data story yang diterima tidak kosong
+          berhasil memuat data story menggunakan paging
+            jumlah data story sesuai dengan yang diharapkan (20 item)
+
+        CreateStoryViewModel
+            berhasil kirim story
+
+        StoryLocationViewModel
+            berhasil memuat story yang mempunyai latitude (lat) dan longitude (lon)
