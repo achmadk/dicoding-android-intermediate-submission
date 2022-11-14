@@ -41,4 +41,8 @@
     <string name="create_story_image_content_description">Tampilan Pratinjau Foto</string>
     <string name="action_choose_photo_from_gallery">Pilih Foto</string>
     <string name="detail_photo_content_description">Cerita Foto Pengguna</string>
+    <string name="action_navigate_to_maps">Menuju ke Peta</string>
+    <string name="story_locations_label">Persebaran Lokasi Cerita</string>
+    <string name="my_location_label">Lokasi Saya</string>
+    <string name="loading">Sedang Memuat…</string>
 </resources>

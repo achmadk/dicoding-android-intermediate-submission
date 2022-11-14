@@ -40,4 +40,8 @@
     <string name="create_story_image_content_description">Preview of Create Story Photo</string>
     <string name="action_choose_photo_from_gallery">Choose a Photo</string>
     <string name="detail_photo_content_description">user photo story</string>
+    <string name="action_navigate_to_maps">Navigate to Maps</string>
+    <string name="story_locations_label">Story Locations</string>
+    <string name="my_location_label">My Location</string>
+    <string name="loading">Loading...</string>
 </resources>

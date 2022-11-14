@@ -51,6 +51,9 @@
         <action
             android:id="@+id/action_StoriesFragment_to_CreateStoryFragment"
             app:destination="@id/CreateStoryFragment" />
+        <action
+            android:id="@+id/action_StoriesFragment_to_StoryLocationsFragment"
+            app:destination="@id/StoryLocationsFragment" />
     </fragment>
     <fragment
         android:id="@+id/StoryDetailsFragment"
@@ -79,6 +82,15 @@
 
         <action
             android:id="@+id/action_CreateStoryFragment_to_StoriesFragment"
+            app:destination="@id/StoriesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/StoryLocationsFragment"
+        android:name="dev.achmadk.proasubmission1.StoryLocationsFragment"
+        android:label="@string/story_locations_label"
+        tools:layout="@layout/fragment_story_locations">
+        <action
+            android:id="@+id/action_StoryLocationsFragment_to_StoriesFragment"
             app:destination="@id/StoriesFragment" />
     </fragment>
 </navigation>

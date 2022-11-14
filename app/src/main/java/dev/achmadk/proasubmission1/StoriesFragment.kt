@@ -69,6 +69,10 @@ class StoriesFragment : Fragment() {
 
             override fun onMenuItemSelected(menuItem: MenuItem): Boolean {
                 when (menuItem.itemId) {
+                    R.id.action_navigate_to_maps -> {
+                        findNavController().navigate(R.id.action_StoriesFragment_to_StoryLocationsFragment)
+                        return true
+                    }
                     R.id.action_logout -> {
                         viewModel.logout()
                         findNavController().navigate(R.id.action_StoriesFragment_to_LoginFragment)
