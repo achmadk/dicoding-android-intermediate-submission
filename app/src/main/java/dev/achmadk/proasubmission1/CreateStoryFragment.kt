@@ -53,6 +53,11 @@ class CreateStoryFragment : Fragment() {
         observeViewModels()
     }
 
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
+
     private fun setupMenu() {
         (requireActivity() as MenuHost).addMenuProvider(object: MenuProvider {
             override fun onCreateMenu(menu: Menu, menuInflater: MenuInflater) {
@@ -100,8 +105,6 @@ class CreateStoryFragment : Fragment() {
                 }
                 is Resource.Loading -> {
                     toggleEnableCreateStoryForm(false)
-//                    binding.loading.visibility = View.VISIBLE
-//                    toggleEnableLoginForm(false)
                 }
             }
         }
