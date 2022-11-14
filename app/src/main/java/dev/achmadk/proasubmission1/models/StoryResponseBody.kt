@@ -12,8 +12,8 @@ data class StoryResponseBody (
     var description: String,
     var photoUrl: String,
     var createdAt: String,
-    var lat: Float? = null,
-    var lon: Float? = null,
+    var lat: Double? = null,
+    var lon: Double? = null,
     @PrimaryKey
     var id: String
 ): Parcelable
